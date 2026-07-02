@@ -1,3 +1,0 @@
-/home/adityasingh/Downloads/C++READING/PerformanceZoo/build/CMakeFiles/zoo.dir
-/home/adityasingh/Downloads/C++READING/PerformanceZoo/build/CMakeFiles/edit_cache.dir
-/home/adityasingh/Downloads/C++READING/PerformanceZoo/build/CMakeFiles/rebuild_cache.dir
