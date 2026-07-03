@@ -1,43 +1,81 @@
 #include "../include/zoo.hpp"
-#include <thread>
+
 #include <iostream>
+#include <string>
 
-/**
- * @brief Entry point for the Performance Zoo.
- * Note: Spawning all 11 performance bottlenecks simultaneously will completely 
- * overload your system and make targeted profiling nearly impossible, as the 
- * OS scheduler will thrash. 
- * * For profiling with `perf` or `vtune`, it's best to run one of these at a time.
- */
-int main() 
+void usage()
 {
-    std::cout << "Starting Performance Zoo (WARNING: High system load expected)...\n";
+    std::cout << "\nPerformanceZoo\n\n";
 
-    // Since we put everything in the perf_zoo namespace in zoo.hpp, 
-    // we prefix the calls here.
-    std::thread t1(perf_zoo::cpu_hotspot);
-    std::thread t2(perf_zoo::memory_hotspot);
-    std::thread t3(perf_zoo::io_hotspot);
-    std::thread t4(perf_zoo::lock_contention);
-    std::thread t5(perf_zoo::false_sharing);
-    std::thread t6(perf_zoo::branch_prediction);
-    std::thread t7(perf_zoo::producer_consumer);
-    std::thread t8(perf_zoo::allocation_pressure);
-    std::thread t9(perf_zoo::atomic_contention);
-    std::thread t10(perf_zoo::cache_patterns);
-    std::thread t11(perf_zoo::busy_wait);
+    std::cout << "Usage:\n";
+    std::cout << "./zoo <workload>\n\n";
 
-    t1.join();
-    t2.join();
-    t3.join();
-    t4.join();
-    t5.join();
-    t6.join();
-    t7.join();
-    t8.join();
-    t9.join();
-    t10.join();
-    t11.join();
+    std::cout << "Available workloads:\n";
+    std::cout << "  cpu\n";
+    std::cout << "  memory\n";
+    std::cout << "  io\n";
+    std::cout << "  lock\n";
+    std::cout << "  false\n";
+    std::cout << "  branch\n";
+    std::cout << "  pc\n";
+    std::cout << "  alloc\n";
+    std::cout << "  atomic\n";
+    std::cout << "  cache\n";
+    std::cout << "  busy\n\n";
+}
+
+int main(int argc, char* argv[])
+{
+    if (argc != 2)
+    {
+        usage();
+        return 1;
+    }
+
+    std::string mode(argv[1]);
+
+    std::cout << "Launching workload : "
+              << mode
+              << std::endl;
+
+    if (mode == "cpu")
+        perf_zoo::cpu_hotspot();
+
+    else if (mode == "memory")
+        perf_zoo::memory_hotspot();
+
+    else if (mode == "io")
+        perf_zoo::io_hotspot();
+
+    else if (mode == "lock")
+        perf_zoo::lock_contention();
+
+    else if (mode == "false")
+        perf_zoo::false_sharing();
+
+    else if (mode == "branch")
+        perf_zoo::branch_prediction();
+
+    else if (mode == "pc")
+        perf_zoo::producer_consumer();
+
+    else if (mode == "alloc")
+        perf_zoo::allocation_pressure();
+
+    else if (mode == "atomic")
+        perf_zoo::atomic_contention();
+
+    else if (mode == "cache")
+        perf_zoo::cache_patterns();
+
+    else if (mode == "busy")
+        perf_zoo::busy_wait();
+
+    else
+    {
+        usage();
+        return 1;
+    }
 
     return 0;
 }
