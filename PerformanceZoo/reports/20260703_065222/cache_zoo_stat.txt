@@ -1,0 +1,33 @@
+# started on Fri Jul  3 07:01:25 2026
+
+
+ Performance counter stats for '../build/zoo cache':
+
+    70,234,599,521      cycles                                                        (35.70%)
+    69,905,486,423      instructions              #    1.00  insn per cycle           (42.84%)
+    34,876,871,195      branches                                                      (49.98%)
+         3,845,721      branch-misses             #    0.01% of all branches          (57.13%)
+           729,731      cache-references                                              (64.27%)
+           185,700      cache-misses              #   25.448 % of all cache refs      (71.42%)
+            14,614      context-switches                                            
+                 0      cpu-migrations                                              
+               114      page-faults                                                 
+       100,221,811      L1-dcache-loads                                               (71.42%)
+         6,206,227      L1-dcache-load-misses     #    6.19% of all L1-dcache accesses  (71.43%)
+           196,108      LLC-loads                                                     (71.44%)
+            51,649      LLC-load-misses           #   26.34% of all LL-cache accesses  (71.45%)
+   <not supported>      L1-icache-loads                                             
+        16,404,669      L1-icache-load-misses                                         (28.58%)
+        98,775,962      dTLB-loads                                                    (28.57%)
+            19,348      dTLB-load-misses          #    0.02% of all dTLB cache accesses  (28.56%)
+   <not supported>      iTLB-loads                                                  
+            12,845      iTLB-load-misses                                              (28.55%)
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses                                   
+
+      29.853331461 seconds time elapsed
+
+      29.735126000 seconds user
+       0.006975000 seconds sys
+
+

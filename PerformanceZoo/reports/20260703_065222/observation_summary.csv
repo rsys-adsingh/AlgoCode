@@ -1,0 +1,12 @@
+Workload,Status,Folder
+cpu,SUCCESS,../reports/20260703_065222
+memory,SUCCESS,../reports/20260703_065222
+io,SUCCESS,../reports/20260703_065222
+lock,SUCCESS,../reports/20260703_065222
+false,SUCCESS,../reports/20260703_065222
+branch,SUCCESS,../reports/20260703_065222
+pc,SUCCESS,../reports/20260703_065222
+alloc,SUCCESS,../reports/20260703_065222
+atomic,SUCCESS,../reports/20260703_065222
+cache,SUCCESS,../reports/20260703_065222
+busy,SUCCESS,../reports/20260703_065222
